@@ -70,8 +70,8 @@ function! s:Highlight(group_name, guifg, guibg, gui, guisp)
     endif
 endfunction
 
-" Function without defaults.
-function! s:HighlightX(group_name, guifg, guibg, gui, guisp)
+" highlight, no defaults
+function! s:HighlightND(group_name, guifg, guibg, gui, guisp)
     if empty(a:guifg) && empty(a:guibg) && empty(a:gui) && !has("gui_running")
         return
     endif
@@ -161,10 +161,10 @@ call s:Highlight('MatchParen',      s:black, s:gold, 'bold', '')
 
 call s:Highlight('LineNr',          s:greys[2], '', '', '')
 call s:Highlight('NonText',         s:greys[2], '', '', '')
-call s:HighlightX('CursorColumn',   '', s:greys[5], '', '')
-call s:HighlightX('CursorLine',     '', s:greys[5], '', '')
+call s:HighlightND('CursorColumn',   '', s:greys[5], '', '')
+call s:HighlightND('CursorLine',     '', s:greys[5], '', '')
 call s:Highlight('SignColumn',      '', s:greys[5], '', '')
-call s:HighlightX('ColorColumn',    '', s:greys[5], '', '')
+call s:HighlightND('ColorColumn',    '', s:greys[5], '', '')
 
 call s:Highlight('Error',           s:mordant, s:greys[5], 'bold', '')
 call s:Highlight('ErrorMsg',        s:mordant, '', 'bold', '')
@@ -181,14 +181,14 @@ call s:Highlight('VertSplit',       s:greys[1], s:greys[5], 'bold', '')
 call s:Highlight('ModeMsg',         s:sunny, '', 'bold', '')
 
 if has("spell")
-    call s:HighlightX('SpellBad',    '', '', 'undercurl', s:mordant)
-    call s:HighlightX('SpellCap',    '', '', 'undercurl', s:auburn)
-    call s:HighlightX('SpellLocal',  '', '', 'undercurl', s:auburn)
-    call s:HighlightX('SpellRare',   '', '', 'undercurl', s:white)
+    call s:HighlightND('SpellBad',    '', '', 'undercurl', s:mordant)
+    call s:HighlightND('SpellCap',    '', '', 'undercurl', s:auburn)
+    call s:HighlightND('SpellLocal',  '', '', 'undercurl', s:auburn)
+    call s:HighlightND('SpellRare',   '', '', 'undercurl', s:white)
 endif
 
-call s:HighlightX('VisualNOS',      '', s:greys[4], '', '')
-call s:HighlightX('Visual',         '', s:greys[4], '', '')
+call s:HighlightND('VisualNOS',      '', s:greys[4], '', '')
+call s:HighlightND('Visual',         '', s:greys[4], '', '')
 call s:Highlight('Search',          s:black, s:gold, '', '')
 call s:Highlight('IncSearch',       s:black, s:sunny, '', '')
 
@@ -197,12 +197,12 @@ call s:Highlight('PmenuSel',        s:gold, s:black, 'bold', '')
 call s:Highlight('Pmenu',           '', s:greys[5], '', '')
 call s:Highlight('Pmenu',           s:frost, '', '', '')
 
-call s:HighlightX('DiffDelete',     s:auburn, s:auburn, '', '')
-call s:HighlightX('DiffText',       '', s:greys[3], '', '')
-call s:HighlightX('DiffChange',     '', s:greys[4], '', '')
-call s:HighlightX('DiffAdd',        '', s:moss, '', '')
+call s:HighlightND('DiffDelete',     s:auburn, s:auburn, '', '')
+call s:HighlightND('DiffText',       '', s:greys[3], '', '')
+call s:HighlightND('DiffChange',     '', s:greys[4], '', '')
+call s:HighlightND('DiffAdd',        '', s:moss, '', '')
 
-call s:HighlightX('Underlined',     '', '', 'underline', '')
+call s:HighlightND('Underlined',     '', '', 'underline', '')
 
 call s:Highlight('Directory',       s:lime, '', '', '')
 call s:Highlight('Question',        s:lime, '', '', '')
@@ -212,4 +212,4 @@ call s:Highlight('WildMenu',        s:black, s:lilac, 'bold', '')
 
 call s:Highlight('Title',           '', '', 'underline', '')
 
-call s:HighlightX('Tag',            '', '', 'bold', '')
+call s:HighlightND('Tag',            '', '', 'bold', '')

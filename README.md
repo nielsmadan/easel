@@ -24,7 +24,7 @@ Work on the your color scheme:
 functions and mappings
 ----------------------
 
-###Highlight and HighlightND (use inside color scheme file)
+###Highlight and HighlightND (use inside dark_canvas color scheme file)
 
 The canvas includes two vimscript functions that allow the definition of color scheme definitions with less typing. They
 assume that colors are defined as pairs of RGB hex colors (as strings) and matching entries in the 256 terminal color scheme
@@ -32,9 +32,9 @@ palette ([xtem](www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html)). For ex
 
     let s:lime = ['#aeee00', 154]
 
-The `Highlight` function (with defaults) can then be called:
+The `Highlight` function (with defaults) can then be called inside the color scheme file:
 
-    call s:Highlight('Exception', s:lime, '', 'bold', '')
+    s:Highlight('Exception', s:lime, '', 'bold', '')
 
 Which is equivalent to the command:
 

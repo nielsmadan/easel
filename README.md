@@ -7,23 +7,24 @@ Easel is your one-stop-shop for making color scheme development a breeze. It inc
 * Functions and associated keybindings that come in useful when working on your colorscheme
 * A dark canvas scheme to base your own color scheme on.
 
-how to use
-----------
+###quick how-to
 
-##start a new color scheme
+Start a new color scheme:
 
-1. Clone this repo.
-2. Copy the dark_canvas directory out and rename it with whatever name you want to use for your color scheme
-3. Also rename the file that is in the colors directory and change the name in the line: `let colors_name
+* Copy the dark_canvas directory out and rename it with whatever name you want to use for your color scheme
+* Also rename the file that is in the colors directory and change the name in the line: `let colors_name
    = "dark_canvas"`
-4. Open one of the files in the test_subjects directory, open your color scheme, and source easel.vim from the plugin
-   directory.
 
+Work on the your color scheme:
 
-functions
----------
+* Open one of the files in the test_subjects directory
+* Open your color scheme
+* source easel.vim (`so easel.vim`) from the plugin directory.
 
-##Highlight and HighlightND (use inside color scheme file)
+functions and mappings
+----------------------
+
+###Highlight and HighlightND (use inside color scheme file)
 
 The canvas includes two vimscript functions that allow the definition of color scheme rules with less typing. They
 assume that colors are defined as pairs of RGB hex colors and matching entries in the 256 terminal color scheme
@@ -41,10 +42,26 @@ Which is equivalent to the command:
 
 The `HighlightND` function can be called in the same way, but does not add any default values.
 
+###SynStack
+
+This function will show you the syntax groups for the word under the cursor and also copy it to the `s` register
+(clobbering whatever was there before, so beware) for easy pasting. It is a slightly modified version of a function posed to
+[stackoverflow.com](http://stackoverflow.com/questions/5820793/vim-get-content-of-syntax-element-under-cursor). The
+mapping is `<leader><F3>`.
+
+###hexHighlight
+
+This function will replace any hex color codes with the actual colors. It was written by Yuri Feldmann and you can get
+it directly as a plugin on [vim.org](http://www.vim.org/scripts/script.php?script_id=2937) or on
+[github](https://github.com/vim-scripts/hexHighlight.vim). The mapping to toggle it on or off is `<leader><F4>`.
+
+If you want to redefine the mappings, you can do so at the top of the easel.vim file for now (might make it configurable in the
+future at some point).
+
 test subjects
 -------------
 
-The goal is to have real code that shows all the different syntax constructs.
+The goal is to have high quality and real code that shows all the different syntax constructs.
 
 * javascript: `underscore.js` from `underscore` by Jeremy Ashkenas
   ([link](https://github.com/documentcloud/underscore))
@@ -53,5 +70,11 @@ The goal is to have real code that shows all the different syntax constructs.
 * c: `cluster.c` from `redis` by Salvatore Sanfilippo ([link](https://github.com/antirez/redis))
 
 The respective license text has been added to the top of each source file if they weren't included already.
+
+contribute
+----------
+
+Pull requests welcome. If you have some idea about what other functions/mappings might be useful when workin on a color
+scheme or if you have some test subject file in other languages.
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/f0b269640a4a6ece70882a64ad79e823 "githalytics.com")](http://githalytics.com/nielsmadan/easel)

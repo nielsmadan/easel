@@ -7,7 +7,7 @@ easel is your one-stop-shop for making color scheme development a breeze. It inc
 * Functions and associated keybindings that come in useful when working on your colorscheme.
 * A dark canvas scheme to base your own color scheme on (will add a light one in the future).
 
-###quick how-to
+### quick how-to
 
 Start a new color scheme:
 
@@ -24,7 +24,7 @@ Work on the your color scheme:
 functions and mappings
 ----------------------
 
-###Highlight and HighlightND (use inside dark_canvas color scheme file)
+### Highlight and HighlightND (use inside dark_canvas color scheme file)
 
 The canvas includes two vimscript functions that allow the definition of color scheme definitions with less typing. They
 assume that colors are defined as pairs of RGB hex colors (as strings) and matching entries in the 256 terminal color scheme
@@ -42,14 +42,14 @@ Which is equivalent to the command:
 
 The `HighlightND` function can be called in the same way, but does not add any default values.
 
-###SynStack
+### SynStack
 
 This function will show you the syntax groups for the word under the cursor and also copy it to the `s` register
 (clobbering whatever was there before, so beware) for easy pasting. It is a slightly modified version of a function posed to
 [stackoverflow.com](http://stackoverflow.com/questions/5820793/vim-get-content-of-syntax-element-under-cursor). The
 mapping is `<leader><F3>`.
 
-###hexHighlight
+### hexHighlight
 
 This function will replace any hex color codes with the actual colors. It was written by Yuri Feldmann and you can get
 it directly as a plugin on [vim.org](http://www.vim.org/scripts/script.php?script_id=2937) or on
@@ -75,7 +75,7 @@ The respective license text has been added to the top of each source file if the
 contribute
 ----------
 
-Pull requests welcome. If you have some idea about what other functions/mappings might be useful when workin on a color
+Pull requests welcome. If you have some idea about what other functions/mappings might be useful when working on a color
 scheme or if you have some test subject file in other languages.
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/f0b269640a4a6ece70882a64ad79e823 "githalytics.com")](http://githalytics.com/nielsmadan/easel)
